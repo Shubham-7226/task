@@ -130,7 +130,7 @@
 
 
         var n = 1;
-        var x = 0;
+        var list = [];
 
         function send() {
 
@@ -145,37 +145,29 @@
                     str += n.value + " ";
                 }
             }
-            // console.log(str);
-            list1[x] = document.getElementById("name").value;
-            list2[x] = document.getElementById("email").value;
+            list[1] = document.getElementById("name").value;
+            list[2] = document.getElementById("email").value;
             if (male.checked) {
-                list3[x] = document.getElementById("male").value;
+                list[3] = document.getElementById("male").value;
 
             } else if (female.checked) {
 
-                list3[x] = document.getElementById("female").value;
+                list[3] = document.getElementById("female").value;
 
 
             }
-            list4[x] = document.getElementById("city").value;
-            list5[x] = document.getElementById("state").value;
+            list[4] = document.getElementById("city").value;
+            list[5] = document.getElementById("state").value;
 
-            var cell1 = addrow.insertCell(0);
-            var cell2 = addrow.insertCell(1);
-            var cell3 = addrow.insertCell(2);
-            var cell4 = addrow.insertCell(3);
-            var cell5 = addrow.insertCell(4);
-            var cell6 = addrow.insertCell(5);
+            var cell = [];
 
-
-
-
-            cell1.innerHTML = list1[x];
-            cell2.innerHTML = list2[x];
-            cell3.innerHTML = list3[x];
-            cell4.innerHTML = list4[x];
-            cell5.innerHTML = list5[x];
-            cell6.innerHTML = str;
+            for(let i=1;i<6;i++)
+            {
+                cell[i]=addrow.insertCell(i-1);
+                cell[i].innerHTML=list[i];
+            }
+            cell[6]=addrow.insertCell(5);
+            cell[6].innerHTML = str;
 
         }
     </script>
